@@ -1,0 +1,138 @@
+:root {
+    --cu-red: #ffc7b8;
+    --cu-blue: #c2d4ff;
+    --cu-green: #c2e0c2;
+    --cu-yellow: #fff5c2;
+    --cu-purple: #d2b8ff;
+    --cu-orange: #ffccae;
+    --cu-cyan: #b8e9ed;
+    --cu-pink: #ffb8d9;
+
+    --cu-red-secondary: #ff9980;
+    --cu-blue-secondary: #a6c5ff;
+    --cu-green-secondary: #9fd59f;
+    --cu-yellow-secondary: #fff099;
+    --cu-purple-secondary: #b38cff;
+    --cu-orange-secondary: #ffae80;
+    --cu-cyan-secondary: #80ccd9;
+    --cu-pink-secondary: #ff80bf;
+
+    --cu-white: #ffffff;
+    --cu-gray-lightest: #f9f9f9;
+    --cu-gray-lighter: #e5e5e5;
+    --cu-gray-light: #cccccc;
+    --cu-gray-medium: #999999;
+    --cu-gray-dark: #666666;
+    --cu-gray-darker: #333333;
+    --cu-dark-blue: #16202b;
+    --cu-black: #000000;
+
+    --text-color: var(--cu-dark-blue);
+    --bg-color: var(--cu-gray-lightest);
+}
+
+/* Light Mode Styles */
+[data-cu-theme="light"] {
+    --text-color: var(--text-color);
+}
+
+/* Dark Mode Styles */
+[data-cu-theme="dark"] {
+    --bg-color: var(--cu-gray-darker);
+    --text-color: var(--cu-gray-lightest);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.cu-w {
+    color: var(--cu-white);
+}
+
+.cu-b {
+    color: var(--cu-black);
+}
+
+.b {
+    font-weight: bold;
+}
+
+.alert-w {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--cu-red);
+    border: 2px solid var(--cu-red-secondary);
+}
+
+.alert-w b {
+    color: var(--cu-gray-dark);
+}
+
+.alert-w a {
+    color: var(--cu-gray-dark);
+}
+
+.display {
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+    background-color: var(--cu-gray-dark);
+    color: var(--cu-orange);
+    border-radius: 20px;
+    border: 2px solid var(--cu-gray-medium);
+}
+
+.header-f {
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+}
+
+.jc-center, .jc-c {
+    display: flex;
+    justify-content: center;
+}
+
+.jc-space-around, .jc-sa {
+    display: flex;
+    justify-content:space-around;
+}
+
+.jc-space-between, .jc-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-f {
+    display: flex;
+}
+
+.d-b {
+    display: block;
+}
+
+.td-none, .td-n {
+    text-decoration: none;
+}
+
+.td-underline, .td-u {
+    text-decoration: underline;
+}
+
+a {
+    color: var(--cu-gray-dark);
+}
+
+a:hover {
+    color: var(--cu-gray-darker);
+}
