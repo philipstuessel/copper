@@ -1,4 +1,5 @@
 # copper.js
+---
 ## toggleMode()
 
 This function toggles between light and dark themes by updating the theme preference stored in local storage and applying the corresponding theme to the document.
@@ -43,5 +44,26 @@ This function dynamically imports a script with an optional attribute, such as '
 ```js
 cu_import("exampleScript.js", "async"); // Dynamically imports a script with async attribute
 ```
+
+## docAppend(value)
+This function searches for an element in the document with the specified selector and returns it.
+```js
+docAppend("value"); // Returns the element with the specified selector
+```
+
+## setTitle(new_title)
+This function sets the document's title to the specified new title.
+```js
+setTitle("New Title"); // Sets the document's title to the new title
+```
+
+## setIcon(new_icon)
+This function updates the document's favicon with the specified new icon.
+
+```js
+setIcon("new_icon.png"); // Updates the document's favicon with the new icon
+```
+
+---
 
 These examples demonstrate the functionality of each function and how they can be used within your script to perform various tasks such as theme toggling, logging messages, displaying content, copying text to clipboard, and dynamically importing scripts.

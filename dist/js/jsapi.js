@@ -1,3 +1,4 @@
+// jsaip.js
 // @ts-nocheck
 var Jsapi = /** @class */ (function () {
     function Jsapi(apiUrl, headers) {

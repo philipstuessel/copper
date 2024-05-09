@@ -1,3 +1,4 @@
+// copper.js
 function toggleMode() {
   const currentTheme = document.documentElement.getAttribute('data-cu-theme');
   let newTheme;
@@ -25,7 +26,6 @@ if (!currentTheme) {
 }
 setThemePreference(currentTheme || 'light');
 setIconBasedOnTheme();
-
 
 function p(value) {
   console.log(value);
@@ -56,4 +56,17 @@ function cu_import(scriptPath, attribute = "") {
     script.onerror = reject; 
     document.head.appendChild(script);
   });
+}
+
+function docAppend(value) {
+  return document.querySelector(value);
+}
+
+function setTitle(new_title) {
+  document.title = new_title
+}
+
+function setIcon(new_icon) {
+  var linkElement = document.querySelector('link[rel="shortcut icon"]');
+  linkElement.href = new_icon;
 }

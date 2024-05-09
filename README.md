@@ -1,3 +1,8 @@
+<p align="center">
+<img src="./images/copper-logo.png" width="25%" />
+</p>
+
+
 # Copper
 ### Copper: A Minimalistic Front-End Framework
 
