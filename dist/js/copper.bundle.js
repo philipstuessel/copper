@@ -15,11 +15,6 @@ function setThemePreference(theme) {
   localStorage.setItem('theme', theme);
 }
 
-function setIconBasedOnTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-cu-theme');
-  if (currentTheme === 'dark') {} else {}
-}
-
 const currentTheme = localStorage.getItem('theme');
 if (!currentTheme) {
   setThemePreference('dark');
@@ -70,7 +65,35 @@ function setIcon(new_icon) {
   var linkElement = document.querySelector('link[rel="shortcut icon"]');
   linkElement.href = new_icon;
 }
-// jsaip.js
+
+function showInfo() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  let bts = "";
+  if (width >= 1400) {
+    bts = "XXL";
+  } else if (width >= 1200) {
+    bts = "XL";
+  } else if (width >= 992) {
+    bts = "LG";
+  } else if (width >= 768) {
+    bts = "MD";
+  } else if (width >= 576) {
+    bts = "SM";
+  } else {
+    bts = "XS";
+  }
+  var display = `<strong>${bts}</strong> // ${width}px - ${height}px`;
+  let infoElement = document.querySelector('.cu-info');
+  if (!infoElement) {
+    infoElement = document.createElement('div');
+    infoElement.className = 'cu-info';
+    document.body.appendChild(infoElement);
+  }
+  infoElement.innerHTML = display;
+
+  setTimeout(showInfo, 600);
+}// jsaip.js
 // @ts-nocheck
 var Jsapi = /** @class */ (function () {
     function Jsapi(apiUrl, headers) {
@@ -216,3 +239,55 @@ function toBoolOrNull(value) {
     return value;
   }
 }
+// localstorage.js
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // CommonJS
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.LS = factory();
+    }
+}(typeof self !== 'undefined' ? self : this, function () {
+    'use strict';
+
+    class LS {
+        constructor(storageKey) {
+            this.storageKey = storageKey;
+        }
+
+        save(key, value) {
+            if (typeof value === 'object') {
+                value = JSON.stringify(value);
+            }
+            localStorage.setItem(this.storageKey + ':' + key, value);
+        }
+
+        load(key) {
+            let value = localStorage.getItem(this.storageKey + ':' + key);
+            try {
+                return JSON.parse(value);
+            } catch (e) {
+                return value;
+            }
+        }
+
+        remove(key) {
+            localStorage.removeItem(this.storageKey + ':' + key);
+        }
+
+        clear() {
+            Object.keys(localStorage)
+                .forEach(k => {
+                    if (k.startsWith(this.storageKey + ':')) {
+                        localStorage.removeItem(k);
+                    }
+                });
+        }
+    }
+
+    return LS;
+}));

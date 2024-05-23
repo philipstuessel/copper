@@ -15,11 +15,6 @@ function setThemePreference(theme) {
   localStorage.setItem('theme', theme);
 }
 
-function setIconBasedOnTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-cu-theme');
-  if (currentTheme === 'dark') {} else {}
-}
-
 const currentTheme = localStorage.getItem('theme');
 if (!currentTheme) {
   setThemePreference('dark');
@@ -69,4 +64,33 @@ function setTitle(new_title) {
 function setIcon(new_icon) {
   var linkElement = document.querySelector('link[rel="shortcut icon"]');
   linkElement.href = new_icon;
+}
+
+function showInfo() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  let bts = "";
+  if (width >= 1400) {
+    bts = "XXL";
+  } else if (width >= 1200) {
+    bts = "XL";
+  } else if (width >= 992) {
+    bts = "LG";
+  } else if (width >= 768) {
+    bts = "MD";
+  } else if (width >= 576) {
+    bts = "SM";
+  } else {
+    bts = "XS";
+  }
+  var display = `<strong>${bts}</strong> // ${width}px - ${height}px`;
+  let infoElement = document.querySelector('.cu-info');
+  if (!infoElement) {
+    infoElement = document.createElement('div');
+    infoElement.className = 'cu-info';
+    document.body.appendChild(infoElement);
+  }
+  infoElement.innerHTML = display;
+
+  setTimeout(showInfo, 600);
 }

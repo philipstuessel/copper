@@ -64,6 +64,13 @@ This function updates the document's favicon with the specified new icon.
 setIcon("new_icon.png"); // Updates the document's favicon with the new icon
 ```
 
+## showInfo()
+bootstrap greetings // width - height
+```js
+showInfo();
+```
+<img src="../images/showInfo.png">
+
 ---
 
 These examples demonstrate the functionality of each function and how they can be used within your script to perform various tasks such as theme toggling, logging messages, displaying content, copying text to clipboard, and dynamically importing scripts.

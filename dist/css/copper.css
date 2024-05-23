@@ -145,3 +145,13 @@ a {
 a:hover {
     color: var(--cu-gray-darker);
 }
+
+.cu-info {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    padding: 5px;
+    background-color: #d6d6d685;
+    -webkit-backdrop-filter: saturate(1.5) blur(10px);
+    backdrop-filter: saturate(1.5) blur(10px);
+}

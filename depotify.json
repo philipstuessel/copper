@@ -10,7 +10,7 @@
   ],
   "require": {},
   "scripts": {
-    "bundle": "cat ./dist/js/copper.js ./dist/js/jsapi.js ./dist/js/params.js > ./dist/js/copper.bundle.js",
+    "bundle": "cat ./dist/js/copper.js ./dist/js/jsapi.js ./dist/js/params.js ./dist/js/localstorage.js > ./dist/js/copper.bundle.js",
     "min": "opd min ./dist/js ./dist/js && opd min ./dist/css ./dist/css"
   }
 }
